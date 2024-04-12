@@ -69,6 +69,27 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## ENDPOINTS
+
+# Priority
+- `Post` - /priority: Para criar uma nova prioridade.
+- `Get` - /priority: Para pegar todas as prioridades.
+- `Put` - /priority: Para atualizar a prioridade.
+
+# ToDo
+- `Post` - /todo: Para criar uma nova tarefa.
+- `Put` - /todo: Para atualizar a tarefa.
+- `Get` - /todo/{user}: Para pegar todas as tarefas.
+- `Patch` - /todo/{id}/{user}: Para atualizar a tarefa.
+- `Delete` - /todo/{id}/{user}: Para deletar uma tarefa.
+
+`Obs: id é o id da Tarefa e user é o id do usuário.`
+
+# User
+- `Post` - /user: Para criar um novo usuário.
+- `Put` - /user: Para atualizar o usuário.
+- `Get` - /user: Para verificar o usuário.
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
