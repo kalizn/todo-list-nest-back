@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model tb_users {
+  id     Int  @id @default(autoincrement())
+  name   String  
+  idGoogle  String  
+  todos  tb_todo[]
+}
+
+model tb_priority {
+  id       Int     @id @default(autoincrement())
+  name     String 
+  active   Boolean @default(true)
+  todo      tb_todo[]
+}
+
+model tb_todo {
+  id           Int        @id @default(autoincrement())
+  user         tb_users   @relation(fields: [idUser], references: [id]) 
+  idUser       Int     
+  title        String
+  description  String
+  created_at   DateTime   @default(now())
+  updated_at   DateTime   @updatedAt
+  finalDate    String?
+  finally_at   String?
+  priority     tb_priority @relation(fields: [priorityId], references: [id])
+  priorityId   Int
+}
