@@ -30,6 +30,17 @@
 
 ```bash
 $ npm install
+
+# migration
+$ npx prisma migrate dev
+
+# seed
+$ npm run seed
+```
+
+## Configure .env
+```
+# DATABASE_URL="postgresql://<usuario>:<senha>@<host>:<porta>/<nome_do_banco>"
 ```
 
 ## Running the app
